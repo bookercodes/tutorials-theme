@@ -58,6 +58,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    padding-top: 64px;
 }
 
 .site-main {
@@ -109,7 +110,12 @@ body {
 /* ---------------------------------------------------------- */
 
 .site-header {
-    position: relative;
+
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+
     padding-top: 12px;
     padding-bottom: 12px;
     color: #fff;
@@ -365,6 +371,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     .site-nav-left {
         margin-right: 0;
         padding-left: 4vw;
+        padding-right: 4vw;
     }
     .site-nav-right {
         display: none;

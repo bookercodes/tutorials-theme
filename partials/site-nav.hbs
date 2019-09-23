@@ -1,0 +1,15 @@
+<nav class="site-nav">
+    <div class="site-nav-left">
+        {{^is "home"}}
+            {{#if @site.logo}}
+                <a class="site-nav-logo" href="https://cometchat.com/pro"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
+            {{else}}
+                <a class="site-nav-logo" href="https://cometchat.com/pro">{{@site.title}}</a>
+            {{/if}}
+        {{/is}}
+        {{#if @site.navigation}}
+            {{navigation}}
+        {{/if}}
+        <a class="cta" href="https://app.cometchat.io/register" title="Use CometChat for free" target="_blank" rel="noopener">Use CometChat for free</a>
+    </div>
+</nav>

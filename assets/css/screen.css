@@ -2436,21 +2436,23 @@ Usage (In Ghost editor):
     color: white;
     text-transform: uppercase;
 }
-.post-header .cta:hover {
-    text-decoration: none;
-    background-color: rgb(185, 54, 14);
-}
 
 .home-nav-cta {
-    color: rgb(155, 143, 236); 
+        color: rgb(160, 150, 228);
     text-transform: uppercase;
     font-weight: bold;
+}
+
+@media (max-width: 460px) {
+   .site-link .home-nav-cta {
+        margin-left: 4vw;
+    }
 }
 
 @media (max-width: 500px) {
     .post-header .cta {
         background: none;
-        color: rgb(155, 143, 236); 
+        color: rgb(160, 150, 228);
         text-transform: uppercase;
         font-weight: bold;
     }

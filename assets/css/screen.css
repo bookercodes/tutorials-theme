@@ -58,7 +58,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding-top: 64px;
+    /* margin-top: 63px; */
 }
 
 .site-main {
@@ -110,17 +110,19 @@ body {
 /* ---------------------------------------------------------- */
 
 .site-header {
-
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-
+    position: relative;
     padding-top: 12px;
     padding-bottom: 12px;
     color: #fff;
     background: color(var(--darkgrey) l(-5%)) no-repeat center center;
     background-size: cover;
+}
+
+.post-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 150;
 }
 
 .site-header:before {
@@ -220,7 +222,7 @@ body {
     padding-bottom: 80px;
     letter-spacing: 0.4px;
     white-space: nowrap;
-    width: 100%;
+
     -ms-overflow-scrolling: touch;
 }
 
@@ -376,19 +378,10 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     .site-nav-right {
         display: none;
     }
+
 }
 
-.cta {
-    margin-left: auto;
-    background-color: #e64a19;
-    padding: 7px 10px;
-    color: white;
-    text-transform: uppercase;
-}
-.cta:hover {
-    text-decoration: none;
-    background-color: rgb(185, 54, 14);
-}
+
 /* 6. Post Feed
 /* ---------------------------------------------------------- */
 
@@ -674,12 +667,18 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 
+.post-nav-left {
+    width: 100%;
+}
+
+
 
 /* 7. Single Post
 /* ---------------------------------------------------------- */
 
 .post-template .site-main,
 .page-template .site-main {
+    margin-top: 64px;
     padding-bottom: 4vw;
     background: #fff;
 }
@@ -2427,5 +2426,35 @@ Usage (In Ghost editor):
     }
     .site-footer-nav a:first-child {
         margin-left: 0;
+    }
+}
+
+.post-header .cta {
+    margin-left: auto;
+    background-color: rgb(112, 97, 206);
+    padding: 7px 10px;
+    color: white;
+    text-transform: uppercase;
+}
+.post-header .cta:hover {
+    text-decoration: none;
+    background-color: rgb(185, 54, 14);
+}
+
+.home-nav-cta {
+    color: rgb(155, 143, 236); 
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+@media (max-width: 500px) {
+    .post-header .cta {
+        background: none;
+        color: rgb(155, 143, 236); 
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    .post-header .cta:hover {
+        background: none;
     }
 }

@@ -261,6 +261,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     margin: 0 0 0 -12px;
     padding: 0;
     list-style: none;
+    max-width: none;
 }
 
 .nav li {
@@ -2429,6 +2430,10 @@ Usage (In Ghost editor):
     }
 }
 
+.post-header .cta:hover {
+    text-decoration: none;
+    background-color: rgb(144, 131, 228);
+}
 .post-header .cta {
     margin-left: auto;
     background-color: rgb(112, 97, 206);

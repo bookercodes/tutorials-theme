@@ -2432,20 +2432,20 @@ Usage (In Ghost editor):
 
 .post-header .cta:hover {
     text-decoration: none;
-    background-color: rgb(144, 131, 228);
+    background-color:rgb(238, 186, 137);
 }
 .post-header .cta {
     margin-left: auto;
-    background-color: rgb(112, 97, 206);
+    background-color:rgb(230, 161, 97);
     padding: 7px 10px;
     color: white;
     text-transform: uppercase;
 }
 
 .home-nav-cta {
-        color: rgb(160, 150, 228);
     text-transform: uppercase;
     font-weight: bold;
+    color:rgb(238, 186, 137);
 }
 
 @media (max-width: 460px) {
@@ -2457,7 +2457,7 @@ Usage (In Ghost editor):
 @media (max-width: 500px) {
     .post-header .cta {
         background: none;
-        color: rgb(160, 150, 228);
+        color:rgb(230, 161, 97);
         text-transform: uppercase;
         font-weight: bold;
     }

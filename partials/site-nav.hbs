@@ -2,14 +2,14 @@
     <div class="site-nav-left">
         {{^is "home"}}
             {{#if @site.logo}}
-                <a class="site-nav-logo" href="https://cometchat.com/pro"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
+                <a class="site-nav-logo" href="https://cometchat.com"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
             {{else}}
-                <a class="site-nav-logo" href="https://cometchat.com/pro">{{@site.title}}</a>
+                <a class="site-nav-logo" href="https://cometchat.com">{{@site.title}}</a>
             {{/if}}
         {{/is}}
         {{#if @site.navigation}}
             {{navigation}}
         {{/if}}
-        <a class="site-link home-nav-cta" href="https://app.cometchat.com/register" title="Use CometChat for free" target="_blank" rel="noopener">Use CometChat for free</a>
+        <a class="site-link home-nav-cta" href="https://www.cometchat.com/#product_select" title="Use CometChat for free" target="_blank" rel="noopener">Use CometChat for free</a>
     </div>
 </nav>

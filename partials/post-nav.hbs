@@ -1,15 +1,309 @@
-<nav class="site-nav">
-    <div class="site-nav-left post-nav-left">
-        {{^is "home"}}
-            {{#if @site.logo}}
-                <a class="site-nav-logo" href="https://cometchat.com/"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
-            {{else}}
-                <a class="site-nav-logo" href="https://cometchat.com/">{{@site.title}}</a>
-            {{/if}}
-        {{/is}}
-        {{#if @site.navigation}}
-            {{navigation}}
-        {{/if}}
-        <a class="cta" href="https://app.cometchat.com/register" title="Use CometChat for free" target="_blank" rel="noopener">Use CometChat for free</a>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+
+
+
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: Lato;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    a {
+        /*text-decoration: none;*/
+        color: white;
+    }
+
+    a:hover {
+        color: #e64a19;
+    }
+
+    .container {
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        max-width: 1433px;
+        padding: 30px 20px 30px 20px;
+    }
+
+    .header {
+        background: black;
+        position: fixed;
+        width: 100%;
+        z-index: 500;
+    }
+
+    .header__logo {
+        width: 150px;
+        margin-right: 50px;
+        filter: invert(100%);
+    }
+
+    .header__ul {
+        /* ovewriting theme */
+        margin: 0;
+        padding: 0;
+    }
+    .header__ul {
+        position: relative;
+    }
+
+    .header__li {
+        /* overwriting theme */
+        margin:0;
+        padding-left: 0;
+    }
+
+    .header__li {
+        display: inline-block;
+        margin-left: 25px;
+        font-size: 18px;
+    }
+
+    .header__li .fa {
+        margin-right: 5px;
+    }
+
+    .header__right-nav {
+        margin-left: auto;
+    }
+
+    .header__cta {
+        background: #e64a19;
+        text-transform: uppercase;
+        border: 2px #e64a19 solid;
+        color: white;
+        padding: 10px;
+    }
+    .header__cta:hover {
+        color: #e64a19;
+        background: none;
+    }
+
+    .header__li:hover>.submenu {
+        display: block;
+    }
+
+    .submenu {
+        margin-top: 0;
+        display: none;
+        position: absolute;
+        background: black;
+        min-width: 400px;
+        padding: 12px;
+    }
+
+    .submenu__description {
+        color: white;
+        font-style: italic;
+        font-size: .8em;
+        line-height: 1.1em;
+        margin-bottom: 20px;
+    }
+
+    .submenu__link {
+        display: block;
+        margin-top:10px;
+        margin-bottom:10px;
+    }
+
+    .submenu__link:hover {
+        color: #e64a19;
+        text-decoration: none;
+    }
+    .submenu__link:hover .submenu__description {
+        color: #e64a19;
+    }
+
+    .submenu__link span {
+        display: block;
+    }
+
+    .submenu__product-logo {
+        display: block;
+        width: 30px;
+        margin-bottom: 18px;
+        filter: invert(100%);
+    }
+
+    .prodcuts-submenu {
+        display: flex;
+    }
+
+    .header__li--mobile {
+        display: none;
+    }
+
+    .header__a--cta {
+        font-weight: bold;
+        color: #e64a19;
+    }
+
+    @media only screen and (max-width: 1125px) {
+        .header__li {
+            padding: 5px;
+            margin-left: 8px;
+            /* min-width: 130px;*/
+        }
+
+        .header__li {
+            /*margin-left: 0;*/
+            /*min-width: 130px;*/
+        }
+
+        .header__li--mobile {
+            display: inline-block;
+        }
+
+        .header__logo-container {
+            margin-bottom: 20px;
+            margin-left: 0;
+        }
+
+        .container {
+            flex-direction: column;
+        }
+
+        .header__right-nav {
+            display: none;
+        }
+
+        .submenu {
+            /*     left: -30px; */
+            /*     width: 100%; */
+        }
+
+    }
+
+    @media only screen and (max-width: 610px) {
+        .header__li {
+            margin-left: 0;
+            min-width: 130px;
+        }
+
+        .submenu {
+            left: -30px;
+            width: 100%;
+        }
+    }
+</style>
+
+
+<header class="header">
+    <div class="container">
+
+        <a href="/" class="header__logo-container">
+            <img class="header__logo" src="https://www.cometchat.com/wp-content/uploads/2018/01/CometChat.svg"
+                alt="CometChat" />
+        </a>
+
+        <ul class="header__ul">
+            <li class="header__li">
+                <a class="header__a" href="#">Products <i class="fa fa-angle-down"></i></a>
+                <ul class="submenu">
+                    <div class="prodcuts-submenu">
+                        <ul class="products-submenu__ul">
+                            <li class="submenu__li"><a class="submenu__link" href="/go">
+                                    <img class="submenu__product-logo"
+                                        src="https://www.cometchat.com/wp-content/uploads/2019/02/CC-Go.png" alt="">
+                                    <strong>CometChat Go</strong>
+                                <span class="submenu__description">Chat plugin for WordPress & other popular software.
+                                    Designed for product managers.</span></a></li>
+                            <li class="submenu__li"><a class="submenu__link" href="/go">Overview</a></li>
+                            <li class="submenu__li"><a class="submenu__link" href="/go/features">Features</a></li>
+                            <li class="submenu__li"><a class="submenu__link" href="/go/integrations">Integrations</a></li>
+                            <li class="submenu__li"><a class="submenu__link" href="/go/pricing">Pricing</a></li>
+                            <li class="submenu__li"><a class="submenu__link" href="/go/demo">Demo</a></li>
+                        </ul>
+                        <ul class="products-submenu__ul">
+                            <li class="submenu__li"><a class="submenu__link" href="">
+                                    <img class="submenu__product-logo"
+                                        src="https://www.cometchat.com/wp-content/uploads/2019/02/CometChatPrologo.png"
+                                        alt=""><strong>CometChat Pro</strong>
+                                <span class="submenu__description">Chat SDKs & APIs for Mobile Apps & Websites. Designed
+                                    for developers.</span></a></li>
+                            <li class="submenu__li"><a class="submenu__link" href="/pro">Overview</a></li>
+                            <li class="submenu__li"><a class="submenu__link" href="/pro/features">Features</a></li>
+                            <li class="submenu__li"><a class="submenu__link" href="/pro/integrations">Integrations</a></li>
+                            <li class="submenu__li"><a class="submenu__link" href="/pro/pricing">Pricing</a></li>
+                        </ul>
+                    </div>
+                </ul>
+            </li>
+            <li class="header__li">
+                <a class="header__a" href="#">Solutions <i class="fa fa-angle-down"></i></a>
+                <ul class="submenu">
+                    <li class="submenu__li"><a class="submenu__link" href="/solutions/marketplace"><i class="fa fa-shopping-cart"></i>Marketplace
+                        <span class="submenu__description">Build trust, drive better engagement & more transactions with buyer-to-seller messaging.</span></a>
+                    </li>
+                    <li class="submenu__li"><a class="submenu__link" href="/solutions/dating"><span><i class="fa fa-heart"></i>Dating</span>
+                        <span class="submenu__description">Prompt instant participation from users with a real-time chat to begin their digital age fairy tale.</span></a>
+                    </li>
+                    <li class="submenu__li"><a class="submenu__link" href="/solutions/e-learning"><span><i class="fa fa-graduation-cap"></i>E-Learning</span>
+                        <span class="submenu__description">Make learning a virtual experience &amp; connect the students &amp; teachers on the same platform.</span></a>
+                    </li>
+                    <li class="submenu__li"><a class="submenu__link" href="/solutions/healthcare-consultation"><span><i class="fa fa-plus-square"></i>Healthcare</span>
+                        <span class="submenu__description">Deliver best patient outcomes with better communications. Reach patients anytime &amp; anywhere.</span></a>
+                    </li>
+                    <li class="submenu__li"><a class="submenu__link" href="/solutions/social-community"><span><i class="fa fa-users"></i>Social Community</span>
+                        <span class="submenu__description">Build a connected social ecosystem &amp; grow engagement with intimate conversations.</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li class="header__li">
+                <a class="header__a" href="#">Developers <i class="fa fa-angle-down"></i></a>
+                <ul class="submenu">
+                    <li>
+                    <li class="submenu__li"><a class="submenu__link submenu__product-link" href="/go">
+                            <img class="submenu__product-logo"
+                                src="https://www.cometchat.com/wp-content/uploads/2019/02/CC-Go.png" alt="">
+                            CometChat Go
+                        </a></li>
+                    <li class="submenu__li"><a class="submenu__link" href="https://help.cometchat.com/install-cometchat-on-your-website">Quick start guides</a></li>
+                    <li class="submenu__li"><a class="submenu__link" href="https://developer.cometchat.com/">Developer docs</a></li>
+                    <li class="submenu__li"><a class="submenu__link submenu__product-link" href="">
+                            <img class="submenu__product-logo"
+                                src="https://www.cometchat.com/wp-content/uploads/2019/02/CometChatPrologo.png"
+                                alt="">CometChat Pro</a></li>
+                    <li class="submenu__li"><a class="submenu__link" href="https://prodocs.cometchat.com">Developer docs</a></li>
+                    <li class="submenu__li"><a class="submenu__link" href="/tutorials">Tutorials</a></li>
+                    <li class="submenu__li"><a class="submenu__link" href="https://github.com/cometchat-pro-samples">Sample apps</a></li>
+                    <li class="submenu__li"><a class="submenu__link" href="https://github.com/cometchat-pro">SDKs</a></li>
+            </li>
+        </ul>
+        </li>
+        <li class="header__li">
+            <a class="header__a" href="#">Resources <i class="fa fa-angle-down"></i></a>
+            <ul class="submenu">
+                <li>
+                <li class="submenu__li"><a class="submenu__link" href="/">Blog
+                    <span class="submenu__description">Read our updates and opinions on real-time technology</span></a></li>
+                <li class="submenu__li"><a class="submenu__link" href="/customers">Customers</a></li>
+        </li>
+        </ul>
+        </li>
+
+        <li class="header__li header__li--mobile">
+            <a class="header__a" href="/contact">Talk to sales</a>
+        </li>
+        <li class="header__li header__li--mobile">
+            <a class="header__a header__a--cta" href="/#product_select">Get started for free</a>
+        </li>
+        </ul>
+
+        <div class="header__right-nav">
+            <ul class="header__ul">
+                <li class="header__li"><a class="header__a" href="/contact">Contact us</a></li>
+                <li class="header__li"><a class="header__cta" href="/#product_select" />Get started for free</a>
+                </li>
+            </ul>
+        </div>
+
     </div>
-</nav>
+
+</header>
